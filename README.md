@@ -1,8 +1,7 @@
-SwitchDoc Labs, LLC
+Bluescan is an application that demonstrate how a python library (blescan) can request a bluetooth stack to scan for available BLE devices. The library have been developed by SwitchDoc Labs, LLC
 June 2014
+.
 
-blescanner is a python program designed to read iBeacon advertizments using a Bluetooth Dongle on a Raspberry Pi
+The examples is modified from the original blescan code. To enumerate and count number of devices according to a set of command line parameters. Use with "sudo python testblescanner.py"
 
-To test, "sudo python testblescanner.py"
-
-
+. Sudo is necessary as BLE function is subject to root priviliges(?)
