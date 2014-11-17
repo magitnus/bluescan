@@ -114,7 +114,7 @@ def hci_le_set_scan_parameters(sock):
 
 
     
-def parse_events(sock, loop_count=100, hostScript=""):
+def parse_events(sock, loop_count=100, hostScript="", macid=""):
     old_filter = sock.getsockopt( bluez.SOL_HCI, bluez.HCI_FILTER, 14)
 
     # perform a device inquiry on bluetooth device #0
@@ -157,7 +157,7 @@ def parse_events(sock, loop_count=100, hostScript=""):
                         Reqdict['ddatetime']="2014-09-27T23:55:00"
                         Reqdict['ddatetime']=time.strftime('%Y-%m-%d %H:%M:%S')
 
-                        Reqdict['raspMac']="b8:27:eb:50:53:a7"  # magnus RPI MAC, kolon escaped med %3A 
+                        Reqdict['raspMac']=macid # "b8:27:eb:50:53:a7"  # magnus RPI MAC, kolon escaped med %3A 
                         Reqdict['beaconMac']= packed_bdaddr_to_string(pkt[report_pkt_offset + 3:report_pkt_offset + 9])
                         rssi, = struct.unpack("b", pkt[report_pkt_offset -1])
                     	Reqdict['rcvStrength'] = rssi
